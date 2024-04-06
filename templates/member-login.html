@@ -24,8 +24,9 @@
     <div class="text-center">
       <p>Not a member? <a href="/signup">Register</a></p>
     </div>
+    <div class="center invalid-container"></div>
+
   </form>
-    <div class="invalid-container"></div>
     <script>
         $('form').on('submit', function (e) {
             e.preventDefault();
@@ -37,7 +38,7 @@
                 success: function (response) {
                     if (response === 'failure') {
                         $('.invalid-container').empty();
-                        $('.invalid-container').append('<div class="error"><h3>Invalid username or password!</h3></div>')
+                        $('.invalid-container').append('<div class=""><h3 class="text-danger">Invalid username or password!</h3></div>')
                         $('#LoadingContainer').css('display', 'none');
                     } else {
                         window.location.href = "/";

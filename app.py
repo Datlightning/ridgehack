@@ -23,7 +23,7 @@ getPosts = rd.get_posts()
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    if(not session['creator']):
+    if("creator" in session and not session['creator']):
         return redirect("/post")
     getPosts = rd.get_posts()
     return render_template("index.html", posts=getPosts)
