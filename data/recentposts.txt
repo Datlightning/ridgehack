@@ -1,6 +1,0 @@
-["Communism", "sdf", "VihasFINAL_LOGO.png"]
-['Vihas', 'Abstract art', 'Vihastable_rou.png']
-['Vihas', 'They call me meep meep', 'Vihasmeepmeep.png']
-['Vihas', 'PC ', 'Vihasbackground.png']
-['Vihas', 'ai', 'Vihasfotor-ai-2023122303437.png']
-['Vihas', 'Makerlessons', 'Vihasdownload_4.png']
