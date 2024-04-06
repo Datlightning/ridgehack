@@ -1,0 +1,77 @@
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% extends 'base.html' %}
+    {% block title %}PetConnect{% endblock %}
+    {% block headerinfo %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/banner-video.css')}}">
+    
+    
+    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+    
+    
+    {% endblock %}
+    {% block BodyContent %}
+    
+    <!-- Start Main Top -->
+    
+    <!-- End Main Top -->
+    
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+    
+    <!-- Start Slider -->
+    <!-- Start Products  -->
+    
+    <!-- End Products  -->
+    
+    <!-- Start Blog  -->
+    
+    
+    <!-- End Blog  -->
+    {% for item in posts %}
+    
+    <div class="col-lg-4 outline">
+        <div class="banner-frame"> 
+            <img class="img-fluid" src="../static/images/{{ item[2] }}"
+                alt="Pet Connect" />
+        </div>
+        <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>{{ item[0] }}</h3>
+                            <p>{{ item[1] }} - {{ item[3] }} Views </p>
+                        </div>
+                    </div>
+    </div>
+    {% endfor %}
+    
+    <!-- End Instagram Feed  -->
+    
+    
+    
+    
+    <!-- <a href="/" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a> -->
+    
+    
+    
+    {% endblock %}
