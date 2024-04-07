@@ -3,70 +3,90 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {% extends 'base.html' %}
-    {% block title %}PetConnect{% endblock %}
-    {% block headerinfo %}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/banner-video.css')}}">
-    
-    
-    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
-    
-    
-    {% endblock %}
-    {% block BodyContent %}
-    
-    <!-- Start Main Top -->
-    
-    <!-- End Main Top -->
-    
-    <!-- Start Top Search -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
+{% extends 'base.html' %}
+{% block title %}PetConnect{% endblock %}
+{% block headerinfo %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css' )}}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/banner-video.css')}}">
+
+
+<link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+</script>
+{% endblock %}
+{% block BodyContent %}
+
+<!-- Start Main Top -->
+
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+
+
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" multiple="false" class="form-control" placeholder="Search" onchange="upload()">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
         </div>
     </div>
-    <!-- End Top Search -->
-    
-    <!-- Start Slider -->
-    <!-- Start Products  -->
-    
-    <!-- End Products  -->
-    
-    <!-- Start Blog  -->
-    
-    
-    <!-- End Blog  -->
-    {% if session['logged_in'] %}
-    <div id="OutreachInnerContainer">
-        <form method="post" enctype="multipart/form-data">
+</div>
+<!-- End Top Search -->
+
+<!-- Start Slider -->
+<!-- Start Products  -->
+
+<!-- End Products  -->
+
+<!-- Start Blog  -->
+
+<script>
+    function upload() {
+        var imgcanvas = document.getElementById("canv1");
+        var fileinput = document.getElementById("upload_img");
+        var image = new SimpleImage(fileinput);
+        console.log("here")
+        image.drawTo(imgcanvas);
+    }
+</script>
+<!-- End Blog  -->
+{% if session['logged_in'] %}
+<div class="newmiddle ">
+    <form method="post" enctype="multipart/form-data">
+        <div class="width-100">
+            <canvas class="center" id="canv1"></canvas>
+        </div>
+        <br>
+        <div class="center">
             <label for="myfile">Upload your artwork:</label>
-            <input type="file" id="outreach_editing" name="file"><br>
-            <label for="name">Title the post:</label>
-            <input name = "label" id="label"/>
-            <button>Upload</button>
-        </form>
-    </div>
-    {% endif %}
-    <!-- End Instagram Feed  -->
-    
-    
-    
-    
-    <!-- <a href="/" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a> -->
-    
-    
-    
-    {% endblock %}
+            <input type="file" class="fw" id="upload_img" name="file" onchange="upload()"><br>
+        </div>
+        <div class="inserted_image"></div>
+        <div class="center">
+            <label class="text-sm" for="name">Title the post:</label>
+            <input name="label" class="" id="label" /><br>
+        </div>
+        <button class="width-100 btn btn-outline-danger submit">Upload</button>
+    </form>
+</div>
+{% endif %}
+<!-- End Instagram Feed  -->
+
+
+
+
+<!-- <a href="/" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a> -->
+
+
+
+{% endblock %}

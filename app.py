@@ -23,7 +23,9 @@ getPosts = rd.get_posts()
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    if("creator" in session and not session['creator']):
+    if 'logged_in' not in session:
+        session['logged_in'] = False
+    if("creator" in session and session['creator'] is not None):
         return redirect("/post")
     getPosts = rd.get_posts()
     return render_template("index.html", posts=getPosts)
@@ -42,7 +44,7 @@ def signout():
 
 @app.route('/signup', methods=['GET', 'POST'])    
 def account_creation():
-    if session['logged_in']:
+    if 'logged_in' in session and session['logged_in']:
         return redirect("/")
     
     if request.method == 'POST':
@@ -95,6 +97,8 @@ def post():
 
 @app.route('/past', methods=["GET", "POST"])
 def past():
+    if "logged_in" not in session:
+        session["logged_in"] = False
     if not session['logged_in']:
         return redirect("/signin")
     specificPosts = rd.get_user_post(session['user'])

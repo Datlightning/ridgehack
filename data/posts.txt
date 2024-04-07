@@ -1,1 +1,1 @@
-{'Vihas': [['They call me meep meep', './static/images/Vihasmeepmeep.png'], ['Abstract art', './static/images/Vihastable_rou.png'], ['PC ', 'Vihasbackground.png'], ['ai', 'Vihasfotor-ai-2023122303437.png'], ['Makerlessons', 'Vihasdownload_4.png']]}
+{'Vihas': [['Check out this painting I found.', 'Vihasstarry-night.jpg'], ['Check out this app icon.', 'VihasFINAL_LOGO.png']]}

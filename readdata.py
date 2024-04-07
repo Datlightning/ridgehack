@@ -2,8 +2,12 @@ from pathlib import Path
 directory =  Path(__file__).parent.joinpath("data")
 def get_posts():
     path = directory.joinpath('recentposts.txt')
-    with open(path.resolve(), "r") as file:
-        output = list(map(eval, file.read()[:-1].split("\n")))
+    output = []
+    try:
+        with open(path.resolve(), "r") as file:
+            output = list(map(eval, file.read()[:-1].split("\n")))
+    except:
+        pass
     return output
 def get_users():
     path = directory.joinpath("users.txt")
@@ -27,7 +31,7 @@ def create_post(username, title, picture):
         file.close()
     path = directory.joinpath("recentposts.txt")
     with open(path.resolve(), "a") as file:
-        file.write(str([username, title, picture]) + "\n")
+        file.write(str([username, title, picture,0]) + "\n")
         file.close()
 def get_user_post(username):
     path = directory.joinpath("posts.txt")

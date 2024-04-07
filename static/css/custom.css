@@ -8,6 +8,9 @@
     transform: translate(30%, 25%) !important;
     position: relative;
 }
+.customlogo{
+    max-height: 100px;
+}
 .people{
     display: flex;
     flex-direction: row;
@@ -21,6 +24,13 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 20vh;
+    margin-bottom: 25vh;
+    width: 50%;
+}
+.newmiddle{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10vh;
     margin-bottom: 25vh;
     width: 50%;
 }
@@ -81,10 +91,36 @@ hr.white{
     top: 8vh;
     position: relative;
 }
+canvas {
+    height: 40vh;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+.width-100{
+    width: 100%;
+}
+.overflow{
+    overflow: auto;
+}
 .banner-video{
     position: absolute;
     z-index: -1;
     width: 100%;
+}
+.fancybox{
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+.width-80{
+    width: 95%;
+
+    margin: auto;
 }
 .banner-button{
     
@@ -109,6 +145,9 @@ hr.white{
 }
 .banner-font{
     font-size: 2em !important;
+}
+.fw{
+    width: fit-content
 }
 .banner-container{
     position:relative;

@@ -4,7 +4,7 @@
     <![endif]-->
 
 {% extends 'base.html' %}
-{% block title %}PetConnect{% endblock %}
+{% block title %}Brush.ly{% endblock %}
 {% block headerinfo %}
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
@@ -49,9 +49,12 @@
 
 
 <!-- End Blog  -->
-{% for item in posts %}
+<br><br>
+<div class="row special-list justify-center width-80">
 
-<div class="col-lg-4 outline">
+{% for item in posts %}
+<div class="inline col-lg-4 outline item">
+    <div class="fancybox">
     <div class="banner-frame"> 
         <img class="img-fluid" src="../static/images/{{ item[2] }}"
             alt="Pet Connect" />
@@ -59,11 +62,13 @@
     <div class="blog-content">
                     <div class="title-blog">
                         <h3>{{ item[0] }}</h3>
-                        <p>{{ item[1] }} - {{ item[3] }} Views </p>
+                        <p>{{ item[1] }} </p>
                     </div>
-                </div>
+        </div>
+    </div>
 </div>
 {% endfor %}
+</div>
 
 <!-- End Instagram Feed  -->
 

@@ -15,7 +15,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="../static/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/images/FINAL2.png" type="image/x-icon">
     <!-- <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png"> -->
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -47,7 +47,7 @@
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="/"><img src="../static/images/logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="/"><img src="../static/images/FINAL2.png" class="customlogo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -61,7 +61,7 @@
 
                         <li class="nav-item"><a class="nav-link" href="/post">Create a Post</a></li>
                         <li class="nav-item"><a class="nav-link" href="/past">Past Posts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/signout">Log Out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/signout">Log {{session["user"]}} Out</a></li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="/signin">Log In</a></li>
                         {% endif %}
@@ -118,9 +118,6 @@
     <!-- End Footer  -->
 
     <!-- Start copyright  -->
-    <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2024 <a href="/">ParsippanyPointers</a>
-    </div>
     <!-- End copyright  -->
     <!-- ALL JS FILES -->
     
